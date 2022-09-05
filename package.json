@@ -1,0 +1,20 @@
+{
+  "name": "threejs-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx parcel src/index.html --open",
+    "build": "npx parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.54.8"
+  },
+  "dependencies": {
+    "gsap": "^3.11.0"
+  }
+}

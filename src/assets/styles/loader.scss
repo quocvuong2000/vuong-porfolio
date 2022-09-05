@@ -1,0 +1,112 @@
+@import "./variable.scss";
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  // may not be nesscesary
+  width: 100%;
+  z-index: 99;
+  background-image: radial-gradient(
+    circle farthest-corner at 12.3% 19.3%,
+    #5558da 0%,
+    #5fd1f9 100.2%
+  );
+  display: grid;
+  place-items: center;
+  font-family: "Orbitron", sans-serif;
+  &__box {
+    position: relative;
+    height: 200px;
+    width: 500px;
+    // border: 2px dashed #330867;
+    border-color: #5558da;
+    border-radius: 8px;
+  }
+  &__bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    width: 90%;
+    height: 10px;
+    border-radius: 8px;
+    &--inner {
+      height: 100%;
+      width: 50%;
+      border-radius: 8px;
+      background-color: $dark-blue;
+    }
+  }
+  &__text {
+    position: relative;
+    color: #fff;
+    padding: 1rem;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &--dot {
+      width: 15px;
+      height: 15px;
+      margin: 0 3px;
+      border-radius: 50%;
+      background: #fff;
+      animation: pulse 1s infinite;
+      @keyframes pulse {
+        from {
+          opacity: 0;
+          background: $dark-blue;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    }
+    &--border {
+      height: 1px;
+      // width: 65%;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      animation: width-animation 1s forwards;
+      @keyframes width-animation {
+        from {
+          width: 85%;
+        }
+        to {
+          width: 65%;
+        }
+      }
+    }
+  }
+  &__percentage {
+    position: absolute;
+    top: 70%;
+    left: 0;
+    color: #fff;
+    font-style: 20px;
+    font-weight: 700;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &--counter {
+      color: #fff;
+      // color: $dark-blue;
+    }
+  }
+  &__svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+}
