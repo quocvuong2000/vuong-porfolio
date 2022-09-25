@@ -46,4 +46,4 @@ let barInterval = setInterval(() => {
       // opacity: 0.5,
     });
   }
-}, 20);
+}, 10);

@@ -1,3 +1,4 @@
+@import "./variable.scss";
 .landing {
   position: relative;
   height: 100vh;
@@ -92,8 +93,120 @@
       }
     }
     @media (max-width: 1200px) {
-      &-warp {
+      &-wrap {
         width: 100vw;
+      }
+    }
+  }
+  .socials {
+    position: absolute;
+    left: 50%;
+    bottom: 8rem;
+    transform: translateX(-50%);
+    z-index: 2;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    .coloredIcon {
+      color: #fff;
+      font-size: 2rem;
+      &:hover {
+        animation: coloredIconAnimation 0.2s infinite;
+      }
+      @keyframes coloredIconAnimation {
+        0% {
+          text-shadow: 5px 4px $red-color, -5px -6px $blue-color;
+        }
+        25% {
+          text-shadow: -5px -6px$red-color, 5px 4px$blue-color;
+        }
+        50% {
+          text-shadow: -5px -4px$red-color, 4px 5px$blue-color;
+        }
+        75% {
+          text-shadow: -8px -4px$red-color, -5px -4px$blue-color;
+        }
+        100% {
+          text-shadow: -5px 0 $red-color, 5px -4px$blue-color;
+        }
+      }
+    }
+  }
+  .scroll-container {
+    position: absolute;
+    left: 50%;
+    bottom: 2rem;
+    transform: translate(-50%);
+    .scroll-wrap {
+      height: 40px;
+      width: 20px;
+      border: solid 1px #fff;
+      border-radius: 20px;
+      position: relative;
+      &__inner {
+        height: 3px;
+        width: 3px;
+        background: #fff;
+        left: 50%;
+        top: 0;
+        border-radius: 50%;
+        margin-top: 10px;
+        position: absolute;
+        transform: translateX(-50%);
+        animation: scrollDot 0.8s infinite;
+        @keyframes scrollDot {
+          0% {
+            top: 1px;
+          }
+          25% {
+            top: 2px;
+          }
+          50% {
+            top: 1px;
+          }
+          75% {
+            top: 0px;
+          }
+          100% {
+            top: -1px;
+          }
+        }
+      }
+    }
+    .down-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      align-items: center;
+      .down-vector {
+        height: 10px;
+        width: 10px;
+        border-right: solid 1px #fff;
+        border-bottom: solid 1px #fff;
+        transform: rotate(45deg);
+        animation: arrowDown 0.8s infinite;
+        &:nth-child(1) {
+          animation-delay: 0.2s;
+        }
+        &:nth-child(2) {
+          animation-delay: 0.4s;
+        }
+        &:nth-child(3) {
+          animation-delay: 0.6s;
+        }
+        @keyframes arrowDown {
+          0% {
+            opacity: 0.8;
+          }
+
+          50% {
+            opacity: 0.5;
+          }
+
+          100% {
+            opacity: 1;
+          }
+        }
       }
     }
   }
